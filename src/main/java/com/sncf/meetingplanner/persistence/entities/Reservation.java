@@ -20,6 +20,6 @@ public class Reservation {
     private Integer id;
     private LocalDateTime reservationDate;
     private ReunionType type;
-    String roomName;
-    String userName;
+    private String roomName;
+    private String userName;
 }
