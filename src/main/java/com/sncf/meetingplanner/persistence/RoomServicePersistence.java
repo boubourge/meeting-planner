@@ -12,9 +12,9 @@ import java.util.List;
 @Repository
 public interface RoomServicePersistence extends JpaRepository<Room, String> {
 
-    public static final String SELECT_DISPONIBLE_ROOM = "SELECT room FROM room " +
-            "INNER JOIN reservation ON room.name = reservation.roomName " +
-            "WHERE reservation.reservationdate NOT BETWEEN :startDate AND :endDate";
+    public static final String SELECT_DISPONIBLE_ROOM = "SELECT r FROM Room r " +
+            "INNER JOIN Reservation res ON r.name = res.roomName " +
+            "WHERE res.reservationDate NOT BETWEEN :startDate AND :endDate";
 
     @Query(SELECT_DISPONIBLE_ROOM)
     List<Room> retrieveDisponibleRoom(@Param("dateDebut") LocalDateTime startDate, @Param("dateFin") LocalDateTime endDate);
