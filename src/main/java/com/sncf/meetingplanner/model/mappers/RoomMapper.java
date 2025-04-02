@@ -1,9 +1,8 @@
 package com.sncf.meetingplanner.model.mappers;
 
 import com.sncf.meetingplanner.Material;
-import com.sncf.meetingplanner.model.Room;
 import com.sncf.meetingplanner.model.enums.MaterialType;
-import com.sncf.meetingplanner.persistence.entities.RoomEntity;
+import com.sncf.meetingplanner.persistence.entities.Room;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ValueMapping;
@@ -21,9 +20,9 @@ public interface RoomMapper {
     @Mapping(target = "name", source = "name")
     @Mapping(target = "capacity", source = "capacity")
     @Mapping(target = "material", source = "material")
-    Room mapRoomEntityToRoomModel(RoomEntity roomEntity);
+    com.sncf.meetingplanner.model.Room mapRoomEntityToRoomModel(Room room);
 
-    ArrayList<Room> mapRoomEntityListToRoomModelList(List<RoomEntity> roomEntity);
+    ArrayList<com.sncf.meetingplanner.model.Room> mapRoomEntityListToRoomModelList(List<Room> room);
 
     @ValueMapping(target = "ECRAN", source = "ECRAN")
     @ValueMapping(target = "PIEUVRE", source = "PIEUVRE")
@@ -40,9 +39,9 @@ public interface RoomMapper {
     @Mapping(target = "name", source = "name")
     @Mapping(target = "capacity", source = "capacity")
     @Mapping(target = "material", source = "material")
-    com.sncf.meetingplanner.Room mapRoomModelToRoomDto(Room room);
+    com.sncf.meetingplanner.Room mapRoomModelToRoomDto(com.sncf.meetingplanner.model.Room room);
 
-    List<com.sncf.meetingplanner.Room> mapRoomModelListToRoomDtoList(List<Room> rooms);
+    List<com.sncf.meetingplanner.Room> mapRoomModelListToRoomDtoList(List<com.sncf.meetingplanner.model.Room> rooms);
 
     @ValueMapping(target = "ECRAN", source = "ECRAN")
     @ValueMapping(target = "PIEUVRE", source = "PIEUVRE")

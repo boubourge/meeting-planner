@@ -1,8 +1,5 @@
 package com.sncf.meetingplanner.config;
 
-import com.sncf.meetingplanner.persistence.entities.MeetingUserEntity;
-import com.sncf.meetingplanner.persistence.entities.ReservationEntity;
-import com.sncf.meetingplanner.persistence.entities.RoomEntity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

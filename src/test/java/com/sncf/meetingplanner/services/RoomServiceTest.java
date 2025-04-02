@@ -1,16 +1,12 @@
 package com.sncf.meetingplanner.services;
 
-import com.sncf.meetingplanner.model.Room;
-import com.sncf.meetingplanner.model.enums.MaterialType;
 import com.sncf.meetingplanner.model.enums.ReunionType;
 import com.sncf.meetingplanner.model.mappers.RoomMapper;
 import com.sncf.meetingplanner.persistence.RoomServicePersistence;
-import com.sncf.meetingplanner.persistence.entities.RoomEntity;
-import org.junit.jupiter.api.Test;
+import com.sncf.meetingplanner.persistence.entities.Room;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -43,29 +39,29 @@ class RoomServiceTest {
         // Given
         var startDate = LocalDateTime.of(2025, 2, 4, 18, 26,0);
         var endDate = startDate.plusHours(2);
-        var listBDD = new ArrayList<RoomEntity>();
+        var listBDD = new ArrayList<Room>();
 
-        var room1 = new Room();
+        var room1 = new com.sncf.meetingplanner.model.Room();
         room1.setName("E1001");
         room1.setCapacity(10);
         room1.setMaterial(new ArrayList<>());
 
-        var room2 = new Room();
+        var room2 = new com.sncf.meetingplanner.model.Room();
         room2.setName("E1002");
         room2.setCapacity(8);
         room2.setMaterial(List.of(ECRAN));
 
-        var room3 = new Room();
+        var room3 = new com.sncf.meetingplanner.model.Room();
         room3.setName("E1003");
         room3.setCapacity(20);
         room3.setMaterial(List.of(PIEUVRE));
 
-        var room4 = new Room();
+        var room4 = new com.sncf.meetingplanner.model.Room();
         room4.setName("E1004");
         room4.setCapacity(15);
         room4.setMaterial(List.of(TABLEAU));
 
-        var mapedList = new ArrayList<Room>();
+        var mapedList = new ArrayList<com.sncf.meetingplanner.model.Room>();
         mapedList.add(room1);
         mapedList.add(room2);
         mapedList.add(room3);
