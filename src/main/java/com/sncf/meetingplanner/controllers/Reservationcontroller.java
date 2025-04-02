@@ -1,9 +1,13 @@
-package com.sncf.meetingplanner.api;
+package com.sncf.meetingplanner.controllers;
 
 import com.sncf.meetingplanner.Reservation;
+import lombok.AllArgsConstructor;
 import org.openapitools.api.ReservationApi;
+import org.springframework.web.bind.annotation.RestController;
 
-public class ReservationApiImpl implements ReservationApi {
+@RestController
+@AllArgsConstructor
+public class Reservationcontroller implements ReservationApi {
 
     @Override
     public Reservation addReservation(Reservation reservation) {

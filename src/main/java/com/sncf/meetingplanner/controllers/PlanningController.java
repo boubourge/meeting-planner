@@ -1,4 +1,4 @@
-package com.sncf.meetingplanner.api;
+package com.sncf.meetingplanner.controllers;
 
 import com.sncf.meetingplanner.Reservation;
 import com.sncf.meetingplanner.ReunionType;
@@ -7,21 +7,21 @@ import com.sncf.meetingplanner.model.mappers.ReunionMapper;
 import com.sncf.meetingplanner.model.mappers.RoomMapper;
 import com.sncf.meetingplanner.services.RoomService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.openapitools.api.PlanningApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
+@RestController
 @AllArgsConstructor
-public class PlanningApiImpl implements PlanningApi {
+public class PlanningController implements PlanningApi {
 
-    private static final Logger log = LoggerFactory.getLogger(PlanningApiImpl.class);
-
+    private static final Logger log = LoggerFactory.getLogger(PlanningController.class);
 
     @Autowired
     private RoomService roomService;
