@@ -18,8 +18,13 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
     private LocalDateTime reservationDate;
+
+    @Enumerated(EnumType.STRING)
     private ReunionType type;
+
     private String roomName;
+
     private String userName;
 }

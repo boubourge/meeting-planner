@@ -2,9 +2,8 @@ package com.sncf.meetingplanner.persistence.entities;
 
 import com.sncf.meetingplanner.persistence.entities.enums.MaterialType;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -13,7 +12,10 @@ public class Room {
 
     @Id
     private String name;
+
     private Integer capacity;
+
+    @Enumerated(EnumType.STRING)
     private List<MaterialType> material;
 
     public Room() {
