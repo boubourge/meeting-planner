@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Repository
@@ -18,5 +18,5 @@ public interface RoomServicePersistence extends JpaRepository<Room, String> {
             "or res.reservationDate NOT BETWEEN :startDate AND :endDate";
 
     @Query(SELECT_DISPONIBLE_ROOM)
-    List<Room> retrieveDisponibleRoom(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
+    List<Room> retrieveDisponibleRoom(@Param("startDate") OffsetDateTime startDate, @Param("endDate") OffsetDateTime endDate);
 }

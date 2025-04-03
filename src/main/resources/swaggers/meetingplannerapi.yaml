@@ -332,6 +332,10 @@ components:
           type: string
           items:
             $ref: '#/components/schemas/ReunionType'
+        participantNumber:
+          type: integer
+          format: int64
+          example: 1
     Room:
       type: object
       properties:

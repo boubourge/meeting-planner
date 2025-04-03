@@ -1,42 +1,67 @@
 package com.sncf.meetingplanner.model;
 
-import com.sncf.meetingplanner.model.enums.MaterialType;
 import com.sncf.meetingplanner.persistence.entities.enums.ReunionType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.OffsetDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reservation {
 
-    private String name;
-    private Integer capacity;
-    private List<MaterialType> material;
+    private Integer id;
+    private OffsetDateTime reservationDate;
+    private ReunionType type;
+    private String roomName;
+    private String userName;
+    private Integer participantNumber;
 
-    public String getName() {
-        return name;
+    public Integer getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getCapacity() {
-        return capacity;
+    public OffsetDateTime getReservationDate() {
+        return reservationDate;
     }
 
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
+    public void setReservationDate(OffsetDateTime reservationDate) {
+        this.reservationDate = reservationDate;
     }
 
-    public List<MaterialType> getMaterial() {
-        return material;
+    public ReunionType getType() {
+        return type;
     }
 
-    public void setMaterial(List<MaterialType> material) {
-        this.material = material;
+    public void setType(ReunionType type) {
+        this.type = type;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getParticipantNumber() {
+        return participantNumber;
+    }
+
+    public void setParticipantNumber(Integer participantNumber) {
+        this.participantNumber = participantNumber;
     }
 }

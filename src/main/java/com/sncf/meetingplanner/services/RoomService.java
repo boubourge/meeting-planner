@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 import static com.sncf.meetingplanner.model.enums.MaterialType.*;
@@ -30,13 +30,12 @@ public class RoomService {
     /**
      * Recuperation of the free rooms by date and hour, type of reunion and number of participants
      *
-     * @param reunionDate the date of the reunion
-     * @param reunionType the type of the reunion
+     * @param reunionDate       the date of the reunion
+     * @param reunionType       the type of the reunion
      * @param participantNumber the number of participants for the reunion
-     *
      * @return the list of the free rooms
      */
-    public List<Room> getFreeRoomsForMeeting(LocalDateTime reunionDate, ReunionType reunionType, Integer participantNumber) {
+    public List<Room> getFreeRoomsForMeeting(OffsetDateTime reunionDate, ReunionType reunionType, Integer participantNumber) {
 
         // Recuperation of the disponible rooms for the hours
         var disponibleRooms = roomMapper.mapRoomEntityListToRoomModelList(
@@ -51,10 +50,9 @@ public class RoomService {
     /**
      * Exclusion of the non-compatibles rooms (capacity and material)
      *
-     * @param disponibleRooms the disponible rooms for the hours of the reunion
-     * @param reunionType the type of the reunion
+     * @param disponibleRooms   the disponible rooms for the hours of the reunion
+     * @param reunionType       the type of the reunion
      * @param participantNumber the number of participants for the reunion
-     *
      * @return a new list with only compatible rooms
      */
     private List<Room> excludeNonCompatibleRooms(List<Room> disponibleRooms, ReunionType reunionType, Integer participantNumber) {
@@ -80,9 +78,8 @@ public class RoomService {
     /**
      * Check of the room capacity
      *
-     * @param room the checked room
+     * @param room              the checked room
      * @param participantNumber the number of participants
-     *
      * @return if the room is ok
      */
     private Boolean checkRoomCapacity(Room room, Integer participantNumber) {
@@ -94,9 +91,8 @@ public class RoomService {
     /**
      * Check of the room material
      *
-     * @param room the checked room
+     * @param room        the checked room
      * @param reunionType the type of reunion
-     *
      * @return if the room is ok
      */
     private Boolean checkRoomsForReunionType(Room room, ReunionType reunionType) {

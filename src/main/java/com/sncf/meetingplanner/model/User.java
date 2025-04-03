@@ -1,10 +1,7 @@
 package com.sncf.meetingplanner.model;
 
-import com.sncf.meetingplanner.model.enums.MaterialType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

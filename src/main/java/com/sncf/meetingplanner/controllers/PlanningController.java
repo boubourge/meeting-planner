@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.OffsetDateTime;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,14 +41,13 @@ public class PlanningController implements PlanningApi {
     @Override
     public ResponseEntity<List<Room>> getFreeRooms(OffsetDateTime reunionDate, ReunionType reunionType, Integer participantNumber) {
 
-        log.info("Check of free rooms for a {} reunion whith {} participants at the date : {}", reunionType.name(), participantNumber, reunionDate);
+        log.info("Check of free rooms for a {} reunion with {} participants at the date : {}", reunionType.name(), participantNumber, reunionDate);
 
-        // Mapping of the entry values
-        var reunionDateTime = reunionDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        // Mapping and Conversion of the entry values
         var reunionTypeModel = reunionMapper.reunionTypeDtoToReunionTypeModel(reunionType);
 
-        // Call of the service
-        var listeFreeRooms = roomService.getFreeRoomsForMeeting(reunionDateTime, reunionTypeModel, participantNumber);
+        // Call the service
+        var listeFreeRooms = roomService.getFreeRoomsForMeeting(reunionDate, reunionTypeModel, participantNumber);
 
         return ResponseEntity.of(Optional.ofNullable(roomMapper.mapRoomModelListToRoomDtoList(listeFreeRooms)));
     }

@@ -12,6 +12,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,7 @@ class RoomServiceTest {
     void getFreeRoomsForMeetingTest(ReunionType reunionType) {
 
         // Given
-        var startDate = LocalDateTime.of(2025, 2, 4, 18, 26,0);
+        var startDate = OffsetDateTime.of(2025, 2, 4, 18, 26,0, 0, ZoneOffset.UTC);
         var endDate = startDate.plusHours(2);
         var listBDD = new ArrayList<Room>();
 

@@ -1,13 +1,12 @@
 package com.sncf.meetingplanner.persistence.entities;
 
 import com.sncf.meetingplanner.persistence.entities.enums.MaterialType;
-
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-@Table(name="room")
+@Table(name = "room")
 public class Room {
 
     @Id

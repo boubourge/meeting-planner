@@ -22,8 +22,9 @@ CREATE TYPE reunionType AS ENUM ('VC', 'SPEC', 'RS', 'RC');
 CREATE TABLE reservation
 (
     id INT PRIMARY KEY NOT NULL,
-    reservationDate DATE,
+    reservationDate timestamp,
     type reunionType,
     roomName VARCHAR(100),
-    userName VARCHAR(100)
+    userName VARCHAR(100),
+    participantNumber integer
 );

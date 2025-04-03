@@ -1,20 +1,19 @@
 package com.sncf.meetingplanner.persistence.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.*;
-
 @Entity
-@Table(name="meetinguser")
+@Table(name = "meetinguser")
 @Getter
 @Setter
 @AllArgsConstructor
 public class MeetingUser {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String username;
