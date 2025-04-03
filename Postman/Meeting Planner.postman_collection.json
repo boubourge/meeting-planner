@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "90c4ff49-49ae-4c99-bdff-28be302996ec",
+		"name": "Meeting Planner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3831153"
+	},
+	"item": [
+		{
+			"name": "Check Free Rooms",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/planning/freeRooms?reunionDate=2025-04-01T10:00:00&reunionType=SPEC&participantNumber=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"planning",
+						"freeRooms"
+					],
+					"query": [
+						{
+							"key": "reunionDate",
+							"value": "2025-04-01T10:00:00"
+						},
+						{
+							"key": "reunionType",
+							"value": "SPEC"
+						},
+						{
+							"key": "participantNumber",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

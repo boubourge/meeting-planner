@@ -1,11 +1,13 @@
-J'ai imaginé toute l'API mais je me suis concentré sur les endpoint disponibles pour une démo, à savoir : Récupération des salles disponibles et compatibles.
+Bonjour, voici mon projet exercice pour SNCF Connect.
+
+J'ai imaginé toute l'API mais je me suis concentré sur la finalisation d'un endpoint, à savoir : Récupération des salles disponibles et compatibles.
 
 Un swagger liste les endpoints manquants.
 J'ai également commencé une campagne de tests unitaires.
 
-Des scripts sont disponibles pour initialiser la BDD.
+Des scripts sont disponibles pour initialiser la BDD, ainsi que la collection Postman pour les tests manuels.
 
-Difficultés rencontrées :
+Voici les difficultés rencontrées :
 -> Génération des swaggers
 -> Incompatibilité probable des versions Lombok / Mapstruct
 -> Une dépendance javax qui rendait mes entités non reconnues
