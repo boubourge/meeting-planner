@@ -3,6 +3,7 @@ package com.sncf.meetingplanner.controllers;
 import com.sncf.meetingplanner.Reservation;
 import lombok.AllArgsConstructor;
 import org.openapitools.api.ReservationApi;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,22 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class Reservationcontroller implements ReservationApi {
 
     @Override
-    public Reservation addReservation(Reservation reservation) {
+    public ResponseEntity<Reservation> addReservation(Reservation reservation) {
         return null;
     }
 
     @Override
-    public Reservation deleteReservation(Integer reservationId) {
+    public ResponseEntity<Reservation> deleteReservation(Integer reservationId) {
         return null;
     }
 
     @Override
-    public Reservation getReservation(Integer reservationId) {
+    public ResponseEntity<Reservation> getReservation(Integer reservationId) {
         return null;
     }
 
     @Override
-    public Reservation putReservation(Reservation reservation) {
+    public ResponseEntity<Reservation> putReservation(Reservation reservation) {
         return null;
     }
 }

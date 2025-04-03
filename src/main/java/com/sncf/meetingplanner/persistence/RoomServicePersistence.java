@@ -17,5 +17,5 @@ public interface RoomServicePersistence extends JpaRepository<Room, String> {
             "WHERE res.reservationDate NOT BETWEEN :startDate AND :endDate";
 
     @Query(SELECT_DISPONIBLE_ROOM)
-    List<Room> retrieveDisponibleRoom(@Param("dateDebut") LocalDateTime startDate, @Param("dateFin") LocalDateTime endDate);
+    List<Room> retrieveDisponibleRoom(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
 }

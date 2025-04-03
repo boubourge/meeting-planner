@@ -11,11 +11,13 @@ import org.openapitools.api.PlanningApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -33,12 +35,12 @@ public class PlanningController implements PlanningApi {
     private ReunionMapper reunionMapper;
 
     @Override
-    public List<Reservation> getPlanning(Integer timeSlot) {
-        return List.of();
+    public ResponseEntity<List<Reservation>> getPlanning(Integer timeSlot) {
+        return null;
     }
 
     @Override
-    public List<Room> getFreeRooms(Date reunionDate, ReunionType reunionType, Integer participantNumber) {
+    public ResponseEntity<List<Room>> getFreeRooms(OffsetDateTime reunionDate, ReunionType reunionType, Integer participantNumber) {
 
         log.info("Check of free rooms for a {} reunion whith {} participants at the date : {}", reunionType.name(), participantNumber, reunionDate);
 
@@ -49,6 +51,6 @@ public class PlanningController implements PlanningApi {
         // Call of the service
         var listeFreeRooms = roomService.getFreeRoomsForMeeting(reunionDateTime, reunionTypeModel, participantNumber);
 
-        return roomMapper.mapRoomModelListToRoomDtoList(listeFreeRooms);
+        return ResponseEntity.of(Optional.ofNullable(roomMapper.mapRoomModelListToRoomDtoList(listeFreeRooms)));
     }
 }
