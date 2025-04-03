@@ -15,3 +15,5 @@ Dans l'état le boot se fait et j'accède au service via Postman mais la jointur
 J'aurais aimé pouvoir vous présenter un appel postman lors de notre rencontre mais par manque de temps j'ai choisi de m'arrêter là pour me concentrer sur les TUs.
 
 Pour conclure, c'était un projet très intéressant mais j'ai peut-être voulu trop en faire pour les 2 jours à ma disposition, qui comprenaient les installations de mon PC de dev, la conception et les devs.
+
+Lien vers le swagger : https://github.com/boubourge/meeting-planner/blob/main/src/main/resources/swaggers/meetingplannerapi.yaml
