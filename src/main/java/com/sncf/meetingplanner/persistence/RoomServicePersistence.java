@@ -13,8 +13,9 @@ import java.util.List;
 public interface RoomServicePersistence extends JpaRepository<Room, String> {
 
     public static final String SELECT_DISPONIBLE_ROOM = "SELECT r FROM Room r " +
-            "INNER JOIN Reservation res ON r.name = res.roomName " +
-            "WHERE res.reservationDate NOT BETWEEN :startDate AND :endDate";
+            "LEFT JOIN Reservation res ON r.name = res.roomName " +
+            "WHERE res.reservationDate is null " +
+            "or res.reservationDate NOT BETWEEN :startDate AND :endDate";
 
     @Query(SELECT_DISPONIBLE_ROOM)
     List<Room> retrieveDisponibleRoom(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);

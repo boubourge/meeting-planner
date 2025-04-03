@@ -88,7 +88,7 @@ public class RoomService {
     private Boolean checkRoomCapacity(Room room, Integer participantNumber) {
         // The order in important because Integer (<100) / 100 = 0
         var covidCapacity = room.getCapacity() * 70 / 100;
-        return participantNumber < covidCapacity;
+        return participantNumber <= covidCapacity;
     }
 
     /**
