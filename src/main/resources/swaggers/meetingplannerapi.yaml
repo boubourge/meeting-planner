@@ -89,8 +89,8 @@ paths:
     get:
       tags:
         - reservation
-      summary: Informations about the reservations.
-      description: Check a rfeservation
+      summary: Gestion of the reservations.
+      description: Check a reservation
       operationId: getReservation
       parameters:
         - name: reservationId
@@ -125,7 +125,7 @@ paths:
       tags:
         - reservation
       summary: Demand a new Reservation
-      description: Add a new pet to the store.
+      description: Demand a new Reservation.
       operationId: addReservation
       requestBody:
         description: Demand of a new reservation
@@ -154,8 +154,8 @@ paths:
     put:
       tags:
         - reservation
-      summary: Demand a new Reservation
-      description: Add a new pet to the store.
+      summary: Update a Reservation
+      description: Update a reservation.
       operationId: putReservation
       requestBody:
         description: Demand of a new reservation
@@ -190,8 +190,8 @@ paths:
     delete:
       tags:
         - reservation
-      summary: Informations about the reservations.
-      description: Check a rfeservation
+      summary: Delete a reservation.
+      description: Delete a reservation
       operationId: deleteReservation
       parameters:
         - name: reservationId
@@ -408,7 +408,7 @@ components:
           example: 10
   requestBodies:
     Reservation:
-      description: Pet object that needs to be added to the store
+      description: Room reservations
       content:
         application/json:
           schema:
